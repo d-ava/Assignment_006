@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment_006.databinding.RealEstateItemBinding
 import com.example.assignment_006.model.RS
-import com.example.assignment_006.model.RealEstate
 
 class RealEstateAdapter : RecyclerView.Adapter<RealEstateAdapter.RSViewHolder>() {
 
@@ -14,12 +13,11 @@ class RealEstateAdapter : RecyclerView.Adapter<RealEstateAdapter.RSViewHolder>()
    private var list: MutableList<RS.Content> = mutableListOf()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(list: MutableList<RS.Content>) {
+    fun setData(list: List<RS.Content>) {
         this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
     }
-
 
 
 
@@ -44,13 +42,13 @@ class RealEstateAdapter : RecyclerView.Adapter<RealEstateAdapter.RSViewHolder>()
     inner class RSViewHolder(private val binding: RealEstateItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        private lateinit var charData: RS.Content
+        private lateinit var rsData: RS.Content
 
         fun onBind() {
-            charData = list[adapterPosition]
-            binding.tvPublishDate.text = charData.descriptionKA
-            binding.tvtitleKA.text = charData.titleKA
-            binding.tvDescription.text = charData.descriptionKA
+            rsData = list[adapterPosition]
+            binding.tvPublishDate.text = rsData.publishDate
+            binding.tvtitleKA.text = rsData.titleKA
+            binding.tvDescription.text = rsData.descriptionKA
 
         }
 

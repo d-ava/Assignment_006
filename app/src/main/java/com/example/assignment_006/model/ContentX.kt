@@ -3,7 +3,7 @@ package com.example.assignment_006.model
 
 import com.google.gson.annotations.SerializedName
 
-data class RealEstate(
+data class ContentX(
     val id: String,
     val descriptionEN: String,
     val descriptionKA: String,

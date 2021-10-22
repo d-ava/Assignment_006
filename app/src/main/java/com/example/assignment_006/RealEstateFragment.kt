@@ -1,9 +1,18 @@
 package com.example.assignment_006
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.assignment_006.databinding.RealEstateFragmentBinding
+import com.example.assignment_006.model.RS
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import retrofit2.Response
+import java.io.IOException
 
 class RealEstateFragment :
     BaseFragment<RealEstateFragmentBinding, RealEstateModel>(RealEstateFragmentBinding::inflate) {
@@ -20,18 +29,18 @@ class RealEstateFragment :
         binding.RV.adapter = adapter
         binding.RV.layoutManager = layoutManager
 
-        binding.btn.setOnClickListener {
 
-            progressBarVisible()
+        progressBarVisible()
 
-            viewModel.startRealEstate()
-            viewModel.dataFromRealEstate.observe(viewLifecycleOwner) {
-                val list2 = mutableListOf(it)
-                adapter.setData(list2)
+        viewModel.startRealEstate()
+        viewModel.dataFromRealEstate.observe(viewLifecycleOwner) {
 
-            }
+            adapter.setData(it)
             progressBarInvisible()
         }
+
+
+        
 
 
     }

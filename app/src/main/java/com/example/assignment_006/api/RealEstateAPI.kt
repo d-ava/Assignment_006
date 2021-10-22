@@ -8,10 +8,8 @@ import retrofit2.http.GET
 
 interface RealEstateAPI {
     @GET(ENDPOINT)
-
-
     suspend fun getRealEstate(
 
-    ): Response<RS.Content>
+    ): Response<RS>
 
 }
