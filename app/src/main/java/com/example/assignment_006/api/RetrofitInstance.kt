@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    //base url. information comes from. and how to convert. Gson or Moshi ...
+
 
     private val retrofit by lazy {
         Retrofit.Builder()

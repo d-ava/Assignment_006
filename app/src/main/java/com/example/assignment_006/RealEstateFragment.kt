@@ -28,6 +28,7 @@ class RealEstateFragment :
             viewModel.dataFromRealEstate.observe(viewLifecycleOwner) {
                 val list2 = mutableListOf(it)
                 adapter.setData(list2)
+
             }
             progressBarInvisible()
         }

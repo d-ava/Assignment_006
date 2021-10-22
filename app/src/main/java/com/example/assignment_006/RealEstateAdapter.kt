@@ -23,6 +23,8 @@ class RealEstateAdapter : RecyclerView.Adapter<RealEstateAdapter.RSViewHolder>()
 
 
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RSViewHolder {
         return RSViewHolder(
             RealEstateItemBinding.inflate(
