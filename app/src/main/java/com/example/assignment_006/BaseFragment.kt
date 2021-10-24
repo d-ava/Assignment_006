@@ -57,15 +57,4 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(private val inflat
 
     }
 
-/*
-    private fun init2(){
-
-        if (useSharedViewModel){
-            val vmodel: ViewModel by viewModels()
-        }else{
-            val vmodel: ViewModel by activityViewModels()
-        }
-
-    }*/
-
 }
